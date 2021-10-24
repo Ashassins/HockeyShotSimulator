@@ -33,7 +33,8 @@ public class Puck : MonoBehaviour
             reset_puck();
         }
         if (yeet_urself == 1) {
-            transform.position = new Vector3(-1000f,-1000f,-1000f);
+            transform.position = new Vector3(-35f,-0.239f,1.1f);
+            yeet_urself = 0;
             curr_name = "TIMER OVER!";
         }
         if (OVRInput.GetDown(OVRInput.Button.Two))
@@ -45,6 +46,12 @@ public class Puck : MonoBehaviour
         {
             //transform.position = last_position;
             SceneManager.LoadScene( SceneManager.GetActiveScene().name );
+            score = 0;
+            curr_name = "Can you make this shot?";
+            curr_chance = 0;
+            last_position = new Vector3(0f,0f,0f);
+            // rb.velocity = new Vector3(0,0,0);
+            // transform.position = new Vector3(0f,-0.239f,0f);
         }
     }
 
@@ -55,6 +62,7 @@ public class Puck : MonoBehaviour
         last_position = new Vector3((float) (-28.57 + (57.67 * x[i])),-0.239f, (float)(-16.64 + (35.64 * y[i])));
         transform.position = last_position;
         transform.rotation = Quaternion.Euler(0,0,0);
+        score = score + (int)(100*(1-chance[i]));
         rb.velocity = new Vector3(0,0,0);
         // player.transform.position = new Vector3(0f,0f,0f);
     }

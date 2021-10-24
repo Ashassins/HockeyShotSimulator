@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public float timeValue = 90;
+    public float timeValue = 1200;
     public TextMesh timerText;
 
     // Update is called once per frame

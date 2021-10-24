@@ -23,7 +23,7 @@ public class Goal : MonoBehaviour
         //despawn / teleport puck
         if (c.gameObject.name=="Puck") {
             Puck.goal_scored = 1;
-            Puck.score = Puck.score + 1;
+            // Puck.score = Puck.score + 1;
             //Puck.score += (int)(10 * Puck.curr_chance);
             // scaling score to look fancy smancy
         }
