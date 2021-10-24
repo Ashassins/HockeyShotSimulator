@@ -37,7 +37,7 @@ public class Puck : MonoBehaviour
             yeet_urself = 0;
             curr_name = "TIMER OVER!";
         }
-        if (OVRInput.GetDown(OVRInput.Button.Two))
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
             transform.position = last_position;
             rb.velocity = new Vector3(0,0,0);
